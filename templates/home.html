@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% from "show_links.html" import show_links %}
+
+{% block title %}Sample Landing Page{% endblock %}
+
+{% block nav %}
+{{ show_links(user) }}
+{% endblock %}
+
+{% block body %}
+
+      <div class="page-header">
+        <h1>Sample Landing Page</h1>
+      </div>
+
+{% endblock %}
