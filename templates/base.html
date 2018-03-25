@@ -22,7 +22,16 @@
           <a class="navbar-brand" href="{{ url_for('index') }}">Flask Intro</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        {% block nav %}{% endblock %}
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+              {% if not user %}
+              <li><a href="{{ url_for('login') }}">Login</a></li>
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+              {% endif %}
+              {% if user %}
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+              {% endif %}
+            </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
